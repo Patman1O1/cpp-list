@@ -2,7 +2,7 @@
 # Information
 #-----------------------------------------------------------------------------------------------------------------------
 cmake_minimum_required(VERSION 4.3.0)
-project("cpp_list"
+project("list"
         VERSION 0.1.0
         DESCRIPTION ""
         LANGUAGES CXX
@@ -61,44 +61,44 @@ if(NOT CMAKE_SKIP_INSTALL_RULES)
 endif()
 
 #-----------------------------------------------------------------------------------------------------------------------
-# Target: cpp_list_headers
-# Alias: collections::cpp_list_headers
+# Target: list_headers
+# Alias: collections::list_headers
 # Type: Interface Library
 #-----------------------------------------------------------------------------------------------------------------------
 # Target definition
-add_library(cpp_list_headers INTERFACE)
+add_library(list_headers INTERFACE)
 
 # Target alias
-add_library(collections::cpp_list_headers ALIAS cpp_list_headers)
+add_library(collections::list_headers ALIAS list_headers)
 
 # Target headers
-target_include_directories(cpp_list_headers
+target_include_directories(list_headers
     INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
 )
 
 #-----------------------------------------------------------------------------------------------------------------------
-# Target: cpp_list
-# Alias: collections::cpp_list
+# Target: list
+# Alias: collections::list
 # Type: Interface Library
-# Dependencies: collections::cpp_list_headers
+# Dependencies: collections::list_headers
 #-----------------------------------------------------------------------------------------------------------------------
 # Target definition
-add_library(cpp_list INTERFACE)
+add_library(list INTERFACE)
 
 # Target alias
-add_library(collections::cpp_list ALIAS cpp_list)
+add_library(collections::list ALIAS list)
 
 # Target dependencies
-target_link_libraries(cpp_list
+target_link_libraries(list
     INTERFACE
-        collections::cpp_list_headers
+        collections::list_headers
 )
 
 # Target properties
-set_target_properties(cpp_list PROPERTIES
-        OUTPUT_NAME cpp_list
+set_target_properties(list PROPERTIES
+        OUTPUT_NAME list
         VERSION ${PROJECT_VERSION}
         SOVERSION ${PROJECT_VERSION_MAJOR}
         CXX_VISIBILITY_PRESET hidden
@@ -107,11 +107,11 @@ set_target_properties(cpp_list PROPERTIES
 
 if(NOT CMAKE_SKIP_INSTALL_RULES)
     # Install cpp_list
-    install(TARGETS cpp_list
-            RUNTIME COMPONENT cpp_list
-            LIBRARY COMPONENT cpp_list
-            NAMELINK_COMPONENT cpp_list
-            ARCHIVE COMPONENT cpp_list
+    install(TARGETS list
+            RUNTIME COMPONENT list
+            LIBRARY COMPONENT list
+            NAMELINK_COMPONENT list
+            ARCHIVE COMPONENT list
             INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 endif()
 
