@@ -5,30 +5,30 @@ include(GoogleTest)
 enable_testing()
 
 #-----------------------------------------------------------------------------------------------------------------------
-# Target: cpp_list_test
-# Alias: collections::cpp_list_test
+# Target: list_test
+# Alias: collections::list_test
 # Type: Executable
-# Dependencies: GTest::gtest_main, GTest::gmock_main, collections::cpp_list_headers
+# Dependencies: GTest::gtest_main, GTest::gmock_main, collections::list_headers
 #-----------------------------------------------------------------------------------------------------------------------
 # Target definition
-add_executable(cpp_list_test)
+add_executable(list_test)
 
 # Target alias
-add_executable(collections::cpp_list_test ALIAS cpp_list_test)
+add_executable(collections::list_test ALIAS list_test)
 
 # Target sources
-target_sources(cpp_list_test
+target_sources(list_test
     PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/cpp_list_test.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/list_test.cpp
 )
 
 # Target dependencies
-target_link_libraries(cpp_list_test
+target_link_libraries(list_test
     PRIVATE
-        collections::cpp_list_headers
+        collections::list_headers
         GTest::gtest_main
         GTest::gmock_main
 )
 
 # Test discovery
-gtest_discover_tests(cpp_list_test)
+gtest_discover_tests(list_test)
