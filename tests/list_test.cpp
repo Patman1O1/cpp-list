@@ -3,8 +3,8 @@
 #include <gmock/gmock.h>
 
 // Local Includes
-#include <collections/cpp_list.hpp>
+#include <collections/list.hpp>
 
-namespace cpp_list_testing {
+namespace collections::list_testing {
 
-} // namespace cpp_list_testing
+} // namespace collections::list_testing
