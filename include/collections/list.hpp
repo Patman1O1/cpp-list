@@ -481,6 +481,10 @@ namespace collections {
 
         // TODO: Need to implement
         [[nodiscard]]
+        constexpr auto size() const noexcept -> size_type;
+
+        // TODO: Need to implement
+        [[nodiscard]]
         constexpr auto max_size() const noexcept -> size_type;
 
         // TODO: Need to implement
